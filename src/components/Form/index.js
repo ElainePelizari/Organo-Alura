@@ -4,33 +4,25 @@ import DropdownList from '../DropdownList'
 import TextField from '../TextField'
 import './Form.css'
 
-
 const Form = (props) => {
-
-    const teams = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
     
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
-    const [team, setTeam] = useState('')
+    const [time, setTime] = useState('')
     
     const save = (event) => {
         event.preventDefault()
         props.addNewCollaborator({
-            nome: nome,
-            cargo: cargo,
-            imagem: imagem,
-            team: team
-
+            nome,
+            cargo,
+            imagem,
+            time
         })
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
     }
 
     return (
@@ -59,10 +51,10 @@ const Form = (props) => {
                 />
                 <DropdownList 
                     label="Time" 
-                    itens={teams}
+                    itens={props.teams}
                     required={true}
-                    value={team}
-                    changeValue={value => setTeam(value)}
+                    value={time}
+                    changeValue={value => setTime(value)}
                 ></DropdownList>
                 <Button>Criar card</Button>
             </form>
