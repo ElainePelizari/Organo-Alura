@@ -1,12 +1,22 @@
+import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
-import TextField from './components/TextField';
 
 function App() {
+
+  const [collaborators, setCollaborators] = useState([])
+
+  const addNewCollaborator = (collaborator) => {
+    console.log(collaborator)
+    setCollaborators([...collaborators, collaborator])
+  }
+
   return (
     <div className="App">
       <Banner></Banner>
-      <Form></Form>
+      <Form
+        addNewCollaborator={collaborator => addNewCollaborator(collaborator)}
+      ></Form>
     </div>
   );
 }
