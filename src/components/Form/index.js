@@ -50,9 +50,9 @@ const Form = (props) => {
                     changeValue={value => setImagem(value)}
                 />
                 <DropdownList 
+                    required={true}
                     label="Time" 
                     itens={props.teams}
-                    required={true}
                     value={time}
                     changeValue={value => setTime(value)}
                 ></DropdownList>

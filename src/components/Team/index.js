@@ -2,7 +2,6 @@ import Collaborator from '../Collaborator'
 import './Team.css'
 
 const Team = (props) => {
-
     return (
         <section className="team" style={{ backgroundColor: props.colorSecondary }}>
             <h3 style={{ borderColor: props.colorPrimary}}>{props.name}</h3>
@@ -13,6 +12,7 @@ const Team = (props) => {
                         nome={collaborator.nome} 
                         cargo={collaborator.cargo}
                         imagem={collaborator.imagem}
+                        colorFundo={props.colorPrimary}
                     ></Collaborator>
                 )}
             </div>

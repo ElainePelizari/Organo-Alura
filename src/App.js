@@ -46,7 +46,6 @@ function App() {
   const [collaborators, setCollaborators] = useState([])
 
   const addNewCollaborator = (collaborator) => {
-    console.log(collaborator)
     setCollaborators([...collaborators, collaborator])
   }
 
@@ -59,8 +58,8 @@ function App() {
       ></Form>
 
       {teams.map(team => <Team 
-          name={team.name} 
           key={team.name} 
+          name={team.name} 
           colorPrimary={team.colorPrimary} 
           colorSecondary={team.colorSecondary}
           collaborators={collaborators.filter(collaborator => collaborator.time === team.name)}
